@@ -1,5 +1,4 @@
 # imports
-import json
 import requests
 from urllib3 import disable_warnings
 
