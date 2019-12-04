@@ -1,6 +1,5 @@
 # imports
 import requests
-from urllib3 import disable_warnings
 
 # creds
 import creds
@@ -8,7 +7,7 @@ import creds
 # definititions
 auth = creds.auth
 ip_address = creds.ip_address
-mac_address = ''
+mac_address = 'f82d7cbc607c'
 api_url = 'endpoint/mac-address'
 
 if __name__ == "__main__":
@@ -25,8 +24,7 @@ if __name__ == "__main__":
 
     url = f'https://{ip_address}/api/{api_url}/{mac_address}'
 
-    disable_warnings()
-    response = requests.patch(url, headers=headers, json=payload, verify=False)
+    response = requests.get(url, headers=headers, json=payload)
 
     data = response.json()
     print(data)
